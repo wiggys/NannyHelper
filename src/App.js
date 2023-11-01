@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom';
+import Home from './Home';
+import {DataProvider} from './DataContext';
+import { MyRoutes } from './Routes';
+import { ParentPage } from './pages/Parent';  // custom components
+import { HomePage } from './pages/Home';
+import { SchedulePage } from './pages/Schedule';
+import { FontAwesomeIcon } from "@fortawesome/fontawesome-free";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div className="App">
+
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/parent" element={<ParentPage />} />
+          <Route path="/schedule" element={<SchedulePage /> } />
+          {/* Add other routes as needed. It should set path*/}
+        </Routes>
+      </div>
+
+    </Router>
+  )
 }
 
 export default App;
