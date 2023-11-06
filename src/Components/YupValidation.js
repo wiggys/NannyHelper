@@ -18,7 +18,6 @@ const YupValidation = yup.object().shape({
 
   phoneNumber: yup
     .string()
-    .matches(phoneNumberRegEx, "Invalid Phone Number")
     .max(11, "Invalid Phone Number"),
 
   confirmPassword: yup

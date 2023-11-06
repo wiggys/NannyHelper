@@ -1,12 +1,18 @@
 // This component shows the nanny page which displays the schedule sent by the parent.
 // Schedule.js
-import React, { Component, useContext } from 'react';
+import React, { Component, useContext, useEffect } from 'react';
 import logo from './nanny.jpg';
 import {FormDataContext} from "./FormDataContext";
 /* Fixme use the radial menu for the schedule 
    Fixme urgent; the schedule should be able to get data from the Parent.js inputs*/
 export const SchedulePage = () => {
   const { formData } = useContext(FormDataContext); // access the data in read-only mode
+
+  // Save to local storage
+  useEffect(() => {
+    localStorage.setItem('formData', JSON.stringify(formData));
+  }, [formData]); // this will save formData to localStorage whenever formData changes
+
   return (
     <div>
       <h1> 
