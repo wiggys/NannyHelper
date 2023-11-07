@@ -19,15 +19,35 @@ export const HomePage = () => {
           Welcome to the NannyHelper!
         </h1>
         <h3>
-          We have found through many interviews..
+          We have found through many interviews that nannies struggle to keep up
+          <br></br>
+          with their duties that the children's parents want them to do each day.
         </h3>
         <div className="Buttons">
-          <button className="Custom_Button" onClick={handleParentButtonClick}> 
-            Parental input
-          </button>
-          <button className="Custom_Button" onClick={handleScheduleButtonClick}>
-            Nanny's schedule
-          </button>
+          <div>
+            <button class="button-62" 
+              role="button"
+              onClick={handleParentButtonClick}> 
+              Parent
+            </button>
+            <button class="button-62"
+              role="button" 
+              data-tooltip="The parent page allows the parent to enter a schedule for the nanny. How cool is that?">
+              ?
+            </button>
+          </div>
+          <div>
+            <button class="button-62"
+              role="button"
+              onClick={handleScheduleButtonClick}>
+              View schedule
+            </button>
+            <button class="button-62"
+              role="button" 
+              data-tooltip="The schedule page allows the nanny to view her schedule for the day, awesome right?">
+              ?
+              </button>
+          </div>
         </div>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
