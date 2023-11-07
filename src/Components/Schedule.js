@@ -6,8 +6,24 @@ import {FormDataContext} from "./FormDataContext";
 /* Fixme use the radial menu for the schedule 
    Fixme urgent; the schedule should be able to get data from the Parent.js inputs*/
 export const SchedulePage = () => {
-  const { formData } = useContext(FormDataContext); // access the data in read-only mode
-
+  
+  const formData = {
+    name: "Jane Doe",
+    email: "jane.doe@example.com",
+    phoneNumber: "123-456-7890",
+    nannyName: "Nanny McPhee",
+    date: "2023-11-06",
+    allergy: "Peanuts",
+    activity1: "Reading",
+    time1: "14:00",
+    activity2: "Playtime",
+    time2: "15:00",
+    activity3: "Nap",
+    time3: "16:00",
+    activity4: "Snack",
+    time4: "17:00",
+    image: "path-to-image.jpg"
+  };
   // Save to local storage
   useEffect(() => {
     localStorage.setItem('formData', JSON.stringify(formData));
@@ -23,3 +39,7 @@ export const SchedulePage = () => {
     </div>
   );
 }
+/* 
+Change the formData to use the form from the Parent page.
+const { formData } = useContext(FormDataContext); // access the data in read-only mode
+*/
