@@ -78,6 +78,7 @@
 h1 {
   color: black;
   font-size: 30px;
+  margin-top: 0px;
 }
 
 .Default {
@@ -90,4 +91,10 @@ h1 {
   height: 30px;
   padding: 0px;
   font-weight: bold;
+}
+
+.schedule_text{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }

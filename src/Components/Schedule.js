@@ -4,25 +4,26 @@ import React, { Component, useContext, useEffect } from 'react';
 import logo from './nanny.jpg';
 import {FormDataContext} from "./FormDataContext";
 import noteImage from "../note.JPG";  // doctors note for testing
-/* Fixme use the radial menu for the schedule 
-   Fixme urgent; the schedule should be able to get data from the Parent.js inputs*/
+import { CircleMenu, CircleMenuItem, CircleMenuToggle } from "react-circular-menu";
+/* urgent fix; Make the div that holds the menu have enough space at the top
+so as to not overlap with the text when the menu is opened. */
 export const SchedulePage = () => {
-  
+  // this formData basically uses a preloaded form for easy testing.
   const formData = {
     name: "Jane Doe",
-    email: "jane.doe@example.com",
-    phoneNumber: "123-456-7890",
-    nannyName: "Nanny McPhee",
+    email: "jane@gmail.com",
+    phoneNumber: "773-777-3333",
+    nannyName: "Amanda McPhee",
     date: "2023-11-06",
-    allergy: "Peanuts",
+    allergy: "Jake has peanut allergy, Jill has milk allergy",
     activity1: "Reading",
-    time1: "14:00",
+    time1: "12:00-14:00",
     activity2: "Playtime",
-    time2: "15:00",
+    time2: "15:00-16:00",
     activity3: "Nap",
-    time3: "16:00",
+    time3: "16:00-16:30",
     activity4: "Snack",
-    time4: "17:00",
+    time4: "16:30-17:00",
     image: noteImage
   };
   // Save to local storage
@@ -32,15 +33,27 @@ export const SchedulePage = () => {
 
   return (
     <div>
-      <h1> 
-        This page will contain the nanny's schedule. 
-        The schedule can be in a radial menu or another type.
-        <pre>{JSON.stringify(formData, null, 2)}</pre>
-      </h1>
+      <div className="schedule_text">
+        <h1> 
+          { /* <pre>{JSON.stringify(formData, null, 2)}</pre> */ }
+          Welcome {formData.nannyName}, here is your schedule as requested by {formData.name}.
+          <br></br>
+          The schedule is in clockwise order.
+        </h1>
+      </div>
+      <div>
+        <CircleMenu startAngle={-90} rotationAngle={270} itemSize={10} radius="12">
+          <CircleMenuItem tooltip="activity 1" onClick={() => console.log("Item 1")}>{formData.activity1}<br></br>{formData.time1}</CircleMenuItem>
+          <CircleMenuItem tooltip="activity 2" onClick={() => console.log("Item 2")}>{formData.activity2}<br></br>{formData.time2}</CircleMenuItem>
+          <CircleMenuItem tooltip="activity 3" onClick={() => console.log("Item 3")}>{formData.activity3}<br></br>{formData.time3}</CircleMenuItem>
+          <CircleMenuItem tooltip="activity 4" onClick={() => console.log("Item 4")}>{formData.activity4}<br></br>{formData.time4}</CircleMenuItem>
+          <CircleMenuItem tooltip="allergy info" onClick={() => console.log("allergy info")}>allergy info</CircleMenuItem>
+        </CircleMenu>
+      </div>
     </div>
   );
 }
 /* 
-Change the formData to use the form from the Parent page.
+If you want to change the formData to use the form from the Parent page use the code below instead.
 const { formData } = useContext(FormDataContext); // access the data in read-only mode
 */
