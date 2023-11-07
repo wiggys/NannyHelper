@@ -3,6 +3,7 @@
 import React, { Component, useContext, useEffect } from 'react';
 import logo from './nanny.jpg';
 import {FormDataContext} from "./FormDataContext";
+import noteImage from "../note.JPG";  // doctors note for testing
 /* Fixme use the radial menu for the schedule 
    Fixme urgent; the schedule should be able to get data from the Parent.js inputs*/
 export const SchedulePage = () => {
@@ -22,7 +23,7 @@ export const SchedulePage = () => {
     time3: "16:00",
     activity4: "Snack",
     time4: "17:00",
-    image: "path-to-image.jpg"
+    image: noteImage
   };
   // Save to local storage
   useEffect(() => {
