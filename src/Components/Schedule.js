@@ -3,8 +3,9 @@
 import React, { Component, useContext, useEffect } from 'react';
 import logo from './nanny.jpg';
 import {FormDataContext} from "./FormDataContext";
-import noteImage from "../note.JPG";  // doctors note for testing
+import noteImage from "./note.JPG";  // doctors note for testing
 import { CircleMenu, CircleMenuItem, CircleMenuToggle } from "react-circular-menu";
+import nannyImage from "./nanny3.jpg";
 /* urgent fix; Make the div that holds the menu have enough space at the top
 so as to not overlap with the text when the menu is opened. */
 export const SchedulePage = () => {
@@ -34,12 +35,16 @@ export const SchedulePage = () => {
   return (
     <div>
       <div className="schedule_text">
-        <h1> 
+        <h2> 
           { /* <pre>{JSON.stringify(formData, null, 2)}</pre> */ }
-          Welcome {formData.nannyName}, here is your schedule as requested by {formData.name}.
+          Welcome {formData.nannyName}, here is your schedule for {formData.date} as requested by {formData.name}.
           <br></br>
-          The schedule is in clockwise order.
-        </h1>
+          The schedule opens by pressing the circular menu which goes in clockwise order.
+          <br></br>
+          Pressing the items in the menu opens the description.
+          <br></br>
+          <img src={nannyImage} alt="nanny image" className="nannyImage"/>
+        </h2>
       </div>
       <div>
         <CircleMenu startAngle={-90} rotationAngle={270} itemSize={10} radius="12">
@@ -47,7 +52,7 @@ export const SchedulePage = () => {
           <CircleMenuItem tooltip="activity 2" onClick={() => console.log("Item 2")}>{formData.activity2}<br></br>{formData.time2}</CircleMenuItem>
           <CircleMenuItem tooltip="activity 3" onClick={() => console.log("Item 3")}>{formData.activity3}<br></br>{formData.time3}</CircleMenuItem>
           <CircleMenuItem tooltip="activity 4" onClick={() => console.log("Item 4")}>{formData.activity4}<br></br>{formData.time4}</CircleMenuItem>
-          <CircleMenuItem tooltip="allergy info" onClick={() => console.log("allergy info")}>allergy info</CircleMenuItem>
+          <CircleMenuItem tooltip="allergy info" onClick={() => console.log("allergy info")}>{formData.allergy}</CircleMenuItem>
         </CircleMenu>
       </div>
     </div>

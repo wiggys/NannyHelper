@@ -15,9 +15,12 @@ export const HomePage = () => {
     /* Fix me add a home button that takes it back to the HomePage */
     return (
       <div>
-      <p className="Welcome"> 
-        Welcome to the NannyHelper
-      </p>
+        <h1> 
+          Welcome to the NannyHelper!
+        </h1>
+        <h3>
+          We have found through many interviews..
+        </h3>
         <div className="Buttons">
           <button className="Custom_Button" onClick={handleParentButtonClick}> 
             Parental input
