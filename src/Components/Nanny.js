@@ -2,13 +2,15 @@
 // Schedule.js
 import React, { Component, useContext, useEffect } from 'react';
 import logo from './nanny.jpg';
-import {FormDataContext} from "./FormDataContext";
+import { FormDataContext } from "./FormDataContext";
 import noteImage from "./note.JPG";  // doctors note for testing
 import { CircleMenu, CircleMenuItem, CircleMenuToggle } from "react-circular-menu";
-import nannyImage from "./nanny3.jpg";
+import nannyImage from "./comfort.svg";
+import Header from "./Header";
+import Footer from "./Footer";
 /* urgent fix; Make the div that holds the menu have enough space at the top
 so as to not overlap with the text when the menu is opened. */
-export const SchedulePage = () => {
+export const NannyPage = () => {
   // this formData basically uses a preloaded form for easy testing.
   const formData = {
     name: "Jane Doe",
@@ -33,17 +35,18 @@ export const SchedulePage = () => {
   }, [formData]); // this will save formData to localStorage whenever formData changes
 
   return (
-    <div>
-      <div className="schedule_text">
-        <h2> 
-          { /* <pre>{JSON.stringify(formData, null, 2)}</pre> */ }
+    <div class="flex flex-col h-screen justify-between bg-white">
+      <Header />
+      <div>
+        <h2>
+          { /* <pre>{JSON.stringify(formData, null, 2)}</pre> */}
           Welcome {formData.nannyName}, here is your schedule for {formData.date} as requested by {formData.name}.
           <br></br>
           The schedule opens by pressing the circular menu which goes in clockwise order.
           <br></br>
           Pressing the items in the menu opens the description.
           <br></br>
-          <img src={nannyImage} alt="nanny image" className="nannyImage"/>
+          <img src={nannyImage} alt="nanny image" className="nannyImage" />
         </h2>
       </div>
       <div>
@@ -55,6 +58,7 @@ export const SchedulePage = () => {
           <CircleMenuItem tooltip="allergy info" onClick={() => console.log("allergy info")}>{formData.allergy}</CircleMenuItem>
         </CircleMenu>
       </div>
+      <Footer />
     </div>
   );
 }
