@@ -18,20 +18,10 @@ import { FormDataContext } from "./FormDataContext";
 const BasicFormValidation = () => {
   const initialValue = {
     name: "",
-    email: "",
-    phoneNumber: "",
     nannyName:"",
     date: "",
-    allergy: "", // allergy information
     activity1: "",  // simple layout that allows up to 4 activities and their duration
     time1: "",
-    activity2: "",
-    time2: "",
-    activity3: "",
-    time3: "",
-    activity4: "",
-    time4: "",
-    image: "" // Optional image. Example use can be a doctor's note.
   };
 
   const {setFormData} = useContext(FormDataContext);
@@ -76,32 +66,6 @@ const BasicFormValidation = () => {
                     {/* Second Way */}
                     <Field
                       as={TextField}
-                      label="Email"
-                      type="Email"
-                      name="email"
-                      fullWidth
-                      variant="outlined"
-                      margin="dense"
-                      helperText={<ErrorMessage name="email" />}
-                      error={props.errors.email && props.touched.email}
-                    />
-
-                    <Field
-                      as={TextField}
-                      label="Phone Number"
-                      name="phoneNumber"
-                      fullWidth
-                      variant="outlined"
-                      margin="dense"
-                      helperText={<ErrorMessage name="phoneNumber" />}
-                      error={
-                        props.errors.phoneNumber && props.touched.phoneNumber
-                      }
-                    />
-
-                    {/* Second Way */}
-                    <Field
-                      as={TextField}
                       label="Nanny's name"
                       type="text"
                       name="nannyName"
@@ -122,19 +86,6 @@ const BasicFormValidation = () => {
                       variant="outlined"
                       margin="dense"
                       helperText={<ErrorMessage name="date" />}
-                      error={props.errors.email && props.touched.email}
-                    />
-
-                    {/* Second Way */}
-                    <Field
-                      as={TextField}
-                      label="Allergy info"
-                      type="text"
-                      name="allergy"
-                      fullWidth
-                      variant="outlined"
-                      margin="dense"
-                      helperText={<ErrorMessage name="allergy" />}
                       error={props.errors.email && props.touched.email}
                     />
 
@@ -164,20 +115,7 @@ const BasicFormValidation = () => {
                       error={props.errors.email && props.touched.email}
                     />
 
-                    <TextField
-                      name="image"
-                      type="file"
-                      fullWidth
-                      variant="outlined"
-                      margin="dense"
-                      onChange={(event) =>
-                        props.setFieldValue("image", event.target.files[0])
-                      }
-                      onBlur={props.handleBlur}
-                      helperText={<ErrorMessage name="image" />}
-                      error={props.errors.image && props.touched.image}
-                      //required
-                    />
+                    
 
                     <Button
                       variant="contained"

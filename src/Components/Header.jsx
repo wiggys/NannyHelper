@@ -14,7 +14,7 @@ const Header = () => {
           <img className="w-8" alt="Nanny Helper Icon" fill="white" src={Carriage} />
         </a>
         <div class="mx-auto">
-          Dark Mode
+          
         </div>
       </div>
     </header>
