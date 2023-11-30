@@ -42,14 +42,7 @@ export const NannyPage = () => {
       
       {/* Add a wrapper div with styling around your DemoApp */}
       <div className="p-6 max-w-4xl mx-auto bg-gray-200 rounded-lg shadow-md mt-6 mb-6">
-        <h1>
-          Welcome &nbsp;
-          
-          {formData.nannyName}, here is your schedule for {formData.date} as requested by &nbsp;
-           {formData.name}
-          
-          We hope you're excited for an awesome day full of fun activities, {formData.nannyName}.
-        </h1>
+        
         {/* Optional header for the calendar */}
         <div className="mb-4">
           <h2 className="text-lg text-gray-700 font-semibold">Nanny Schedule</h2>
