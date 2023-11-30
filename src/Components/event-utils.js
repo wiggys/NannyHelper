@@ -9,7 +9,7 @@ export const INITIAL_EVENTS = [
   },
   {
     id: createEventId(),
-    title: 'Soccor',
+    title: 'Soccer',
     start: todayStr + 'T11:00:00'
   },
   {
