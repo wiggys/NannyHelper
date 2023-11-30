@@ -161,9 +161,9 @@ const BasicFormValidation = () => {
                     {/* Second Way */}
                     <Field
                       as={TextField}
-                      label="Activity 1"
+                      label="Activity 4"
                       type="text"
-                      name="activity1"
+                      name="activity4"
                       fullWidth
                       variant="outlined"
                       margin="dense"
