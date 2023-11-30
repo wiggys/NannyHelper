@@ -8,6 +8,12 @@ const initialFormData = {
   date: "2023-11-06",
   activity1: "Reading",
   time1: "12:00-14:00",
+  activity2: "Reading",
+  time1: "12:00-14:00",
+  activity3: "Reading",
+  time1: "12:00-14:00",
+  activity4: "Reading",
+  time1: "12:00-14:00",
 };
 
 export const FormDataProvider = ({ children }) => {

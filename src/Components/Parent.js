@@ -59,13 +59,7 @@ export const ParentPage = () => {
           >
             {showForm ? 'Return' : 'Add a new schedule'}
           </button>
-          <button
-            className={`bg-purple-500 text-white font-bold py-2 px-4 rounded hover:bg-purple-700 ${showForm ? 'opacity-50' : 'hover:shadow-md'}`}
-            onClick={() => setUpdateForm(!updateForm)}
-            disabled={showForm}
-          >
-            {updateForm ? 'Return' : 'Update schedule'}
-          </button>
+          
         </div>
         
         {/* SVG/Image container */}

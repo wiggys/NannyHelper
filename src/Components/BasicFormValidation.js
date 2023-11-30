@@ -22,6 +22,12 @@ const BasicFormValidation = () => {
     date: "",
     activity1: "",  // simple layout that allows up to 4 activities and their duration
     time1: "",
+    activity2: "",  // simple layout that allows up to 4 activities and their duration
+    time2: "",
+    activity3: "",  // simple layout that allows up to 4 activities and their duration
+    time3: "",
+    activity4: "",  // simple layout that allows up to 4 activities and their duration
+    time4: "",
   };
 
   const {setFormData} = useContext(FormDataContext);
@@ -63,23 +69,11 @@ const BasicFormValidation = () => {
                       error={props.errors.name && props.touched.name}
                       required // only required field currently
                     />
-                    {/* Second Way */}
-                    <Field
-                      as={TextField}
-                      label="Nanny's name"
-                      type="text"
-                      name="nannyName"
-                      fullWidth
-                      variant="outlined"
-                      margin="dense"
-                      helperText={<ErrorMessage name="nannyName" />}
-                      error={props.errors.email && props.touched.email}
-                    />
 
                     {/* Second Way */}
                     <Field
                       as={TextField}
-                      label="Date to schedule the nanny"
+                      label="Date for schedule"
                       type="text"
                       name="date"
                       fullWidth
@@ -114,8 +108,82 @@ const BasicFormValidation = () => {
                       helperText={<ErrorMessage name="time1" />}
                       error={props.errors.email && props.touched.email}
                     />
+                    {/* Second Way */}
+                    <Field
+                      as={TextField}
+                      label="Activity 2"
+                      type="text"
+                      name="activity2"
+                      fullWidth
+                      variant="outlined"
+                      margin="dense"
+                      helperText={<ErrorMessage name="activity2" />}
+                      error={props.errors.email && props.touched.email}
+                    />
 
-                    
+                    {/* Second Way */}
+                    <Field
+                      as={TextField}
+                      label="Time to do activity 2"
+                      type="text"
+                      name="time2"
+                      fullWidth
+                      variant="outlined"
+                      margin="dense"
+                      helperText={<ErrorMessage name="time2" />}
+                      error={props.errors.email && props.touched.email}
+                    />
+                    {/* Second Way */}
+                    <Field
+                      as={TextField}
+                      label="Activity 3"
+                      type="text"
+                      name="activity3"
+                      fullWidth
+                      variant="outlined"
+                      margin="dense"
+                      helperText={<ErrorMessage name="activity1" />}
+                      error={props.errors.email && props.touched.email}
+                    />
+
+                    {/* Second Way */}
+                    <Field
+                      as={TextField}
+                      label="Time to do activity 3"
+                      type="text"
+                      name="time3"
+                      fullWidth
+                      variant="outlined"
+                      margin="dense"
+                      helperText={<ErrorMessage name="time3" />}
+                      error={props.errors.email && props.touched.email}
+                    />
+                    {/* Second Way */}
+                    <Field
+                      as={TextField}
+                      label="Activity 1"
+                      type="text"
+                      name="activity1"
+                      fullWidth
+                      variant="outlined"
+                      margin="dense"
+                      helperText={<ErrorMessage name="activity4" />}
+                      error={props.errors.email && props.touched.email}
+                    />
+
+                    {/* Second Way */}
+                    <Field
+                      as={TextField}
+                      label="Time to do activity 4"
+                      type="text"
+                      name="time4"
+                      fullWidth
+                      variant="outlined"
+                      margin="dense"
+                      helperText={<ErrorMessage name="time4" />}
+                      error={props.errors.email && props.touched.email}
+                    />
+
 
                     <Button
                       variant="contained"

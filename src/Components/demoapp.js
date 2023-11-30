@@ -70,10 +70,8 @@ export class DemoApp extends React.Component {
           </label>
         </div>
         <div className='demo-app-sidebar-section'>
-          <h4>All Events ({this.state.currentEvents.length})</h4>
-          <ul>
-            {this.state.currentEvents.map(renderSidebarEvent)}
-          </ul>
+          
+          
         </div>
       </div>
     )
